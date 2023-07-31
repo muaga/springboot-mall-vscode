@@ -40,8 +40,14 @@ public class SellerController {
     // 판매자등록 기능
     @PostMapping("/seller/save")
     public String sellerSave(Seller seller) {
-        sellerRepository.save(seller);
-        return "redirect:/seller";
+        Seller seller1 = sellerRepository.findByEmail(seller.getEmail());
+        // 계속 안되었던 이유는... Seller seller1를 안해서...
+        if (seller1 == null) {
+            sellerRepository.save(seller);
+            return "redirect:/seller";
+        } else {
+            return "redirect:/exist";
+        }
     }
 
     // 판매자 상세 페이지

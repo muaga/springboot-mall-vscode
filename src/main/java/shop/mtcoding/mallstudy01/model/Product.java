@@ -2,6 +2,7 @@ package shop.mtcoding.mallstudy01.model;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,9 +24,13 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private Integer price;
+    @Column(nullable = false)
     private Integer qty;
+    @Column(nullable = false)
     private Timestamp createdAt;
 
     @ManyToOne()

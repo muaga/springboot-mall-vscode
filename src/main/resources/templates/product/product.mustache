@@ -3,16 +3,16 @@
 <div class="container mt-3">
     <form action="/product/save" method="post" enctype="application/x-www-form-urlencoded">
         <div class="mb-3 mt-3">
-            <input type="text" class="form-control" placeholder="Enter 상품명" value="" name="name">
+            <input type="text" class="form-control" placeholder="Enter 상품명" value="" name="name" required>
         </div>
         <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Enter 상품가격" value="" name="price">
+            <input type="text" class="form-control" placeholder="Enter 상품가격" value="" name="price" required>
         </div>
         <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Enter 상품재고" value="" name="qty">
+            <input type="text" class="form-control" placeholder="Enter 상품재고" value="" name="qty" required>
         </div>
         <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Enter 판매자번호" value="" name="sellerId">
+            <input type="text" class="form-control" placeholder="Enter 판매자번호" value="" name="sellerId" required>
         </div>
         <button type="submit" class="btn btn-primary">SUBMIT</button>
     </form>

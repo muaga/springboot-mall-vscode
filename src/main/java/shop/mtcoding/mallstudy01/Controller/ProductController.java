@@ -53,10 +53,19 @@ public class ProductController {
             Seller seller = sellerRepository.findById(sellerId);
             if (seller != null)
                 product.setSeller(seller);
+            if (product.getName() == null || product.getName().isEmpty()) {
+                return "redirect:/ex40x";
+            }
+            if (product.getPrice() == null || product.getPrice().equals(null)) {
+                return "redirect:/ex40x";
+            }
+            if (product.getQty() == null || product.getQty().equals(null)) {
+                return "redirect:/ex40x";
+            }
             productRepository.save(product);
             return "redirect:/";
         } catch (Exception e) {
-            return "redirect:/";
+            return "redirect:/null";
         }
     }
 
@@ -75,6 +84,15 @@ public class ProductController {
             Seller seller = sellerRepository.findById(sellerId);
             if (seller != null)
                 product.setSeller(seller);
+            if (product.getName() == null || product.getName().isEmpty()) {
+                return "redirect:/ex40x";
+            }
+            if (product.getPrice() == null || product.getPrice().equals(null)) {
+                return "redirect:/ex40x";
+            }
+            if (product.getQty() == null || product.getQty().equals(null)) {
+                return "redirect:/ex40x";
+            }
             productRepository.update(product);
             return "redirect:/";
         } catch (Exception e) {

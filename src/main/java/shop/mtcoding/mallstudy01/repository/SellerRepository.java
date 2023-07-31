@@ -61,10 +61,15 @@ public class SellerRepository {
 
     // fingByEmail
     public Seller findByEmail(String email) {
-        Query query = em.createNativeQuery("select * from seller_tb where email = :email", Seller.class);
-        query.setParameter("email", email);
-        Seller seller = (Seller) query.getSingleResult();
-        return seller;
+        try {
+            Query query = em.createNativeQuery("select * from seller_tb where email = :email", Seller.class);
+            query.setParameter("email", email);
+            Seller seller = (Seller) query.getSingleResult();
+            return seller;
+        } catch (Exception e) {
+            return null;
+        }
+
     }
 
 }
