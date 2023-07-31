@@ -5,12 +5,10 @@ import javax.persistence.Table;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
-@Getter
 @Setter
+@Getter
 @Table(name = "seller_tb")
 @Entity
 public class Seller {
