@@ -37,7 +37,7 @@ public class ProductRepository {
         query.setParameter("name", product.getName());
         query.setParameter("price", product.getPrice());
         query.setParameter("qty", product.getQty());
-        query.setParameter("seller_id", product.getSeller().getId());
+        query.setParameter("sellerId", product.getSeller().getId());
         query.setParameter("id", product.getId());
         query.executeUpdate();
     }
