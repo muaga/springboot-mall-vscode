@@ -1,0 +1,30 @@
+{{> layout/header}}
+
+<div class="container mt-3">
+    <!--select 결과가 나올, table이 필요하다.-->
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>판매자번호</th>
+                <th>판매자명</th>
+                <th>판매자 E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#sellerList}}
+        <tr>
+            <td>{{id}}</td>
+            <td><a href="/seller/{{id}}">{{name}}</a></td>
+            <td>{{email}}</td>
+        </tr>
+        {{/sellerList}}
+        {{^sellerList}}
+        <tr>
+            <td colspan="3">No sellers found.</td>
+        </tr>
+        {{/sellerList}}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

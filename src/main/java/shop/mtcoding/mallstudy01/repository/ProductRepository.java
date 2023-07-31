@@ -37,7 +37,8 @@ public class ProductRepository {
         query.setParameter("name", product.getName());
         query.setParameter("price", product.getPrice());
         query.setParameter("qty", product.getQty());
-        query.setParameter("sellerId", product.getSeller().getId());
+        query.setParameter("seller_id", product.getSeller().getId());
+        query.setParameter("id", product.getId());
         query.executeUpdate();
     }
 
@@ -59,6 +60,7 @@ public class ProductRepository {
     // findById
     public Product findById(Integer id) {
         Query query = em.createNativeQuery("select * from product_tb where id = :id", Product.class);
+        query.setParameter("id", id);
         Product product = (Product) query.getSingleResult();
         return product;
     }

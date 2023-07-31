@@ -32,6 +32,7 @@ public class SellerRepository {
         Query query = em.createNativeQuery("update seller_tb set name = :name, email = :email where id = :id");
         query.setParameter("name", seller.getName());
         query.setParameter("email", seller.getEmail());
+        query.setParameter("id", seller.getId());
         query.executeUpdate();
     }
 

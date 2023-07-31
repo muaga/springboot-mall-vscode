@@ -1,0 +1,25 @@
+{{> layout/header}}
+
+<div class="container mt-3">
+    <form action="/seller/update" method="post" enctype="application/x-www-form-urlencoded">
+        <div class="mb-3 mt-3">
+            <input type="text" class="form-control" value={{seller.id}} name="id">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" value={{seller.name}} name="name">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" value={{seller.email}} name="email">
+        </div>
+        <button type="submit" class="btn btn-primary">UPDATE</button>
+        <!--        input를 하게 하는 버튼으로, type이 submit이면 자동으로 폼이 제출되어 POST의 역할을 한다. -->
+    </form>
+    <form action="/seller/delete" method="post">
+        <!-- action의 기능을 한다 -->
+        <input type="hidden" class="form-control" value={{seller.id}} name="id">
+        <!-- 해당 id에 대한 값에 대해 DELETE한다. -->
+        <button type="submit" class="btn btn-danger">DELETE</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{{> layout/header}}
+
+<div class="container mt-3">
+    <form action="/seller/save" method="post" enctype="application/x-www-form-urlencoded">
+        <div class="mb-3 mt-3">
+            <input type="text" class="form-control" placeholder="Enter 판매자명" value="" name="name">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Enter 판매자 E-mail" value="" name="email">
+        </div>
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+        <!--        input를 하게 하는 버튼으로, type이 submit이면 자동으로 폼이 제출되어 POST의 역할을 한다. -->
+    </form>
+</div>
+
+</body>
+</html>
