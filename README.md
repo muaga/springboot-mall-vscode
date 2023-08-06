@@ -30,3 +30,10 @@ java.io.StreamCorruptedException: invalid stream header: 32303233
         }
     }
 ```
+11. 더미데이터 만들 때, PK 테이블을 먼저 INSERT 할 것
+12. redirect할 때, URL 엔드포인트를 작성할 것
+13. 상품을 등록하는 save 같은 경우는, save는 아직 데이터가 생성 전이기 때문에 {id}와 같은 것이 필요없다. 템플릿 엔진에도 value값은 ""으로 해 놓을 것
+   
+## mustache 시 주의할 점
+- application.yml에서 utf-8 체크하기
+- templates에 mustache 파일넣기(WEB-INF/views는 추적이 힘들다...)
